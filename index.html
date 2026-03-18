@@ -987,7 +987,7 @@ function genMobility(){
   let analysisHtml='';
   if(!analysis.isRest){
     analysisHtml=`<div class="card" style="margin-bottom:12px">
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--tx2);letter-spacing:1px;font-weight:700;margin-bottom:8px">ANALYSE DE TA SÉANCE</div>
+      <div style="font-family:\'Barlow Condensed\',sans-serif;font-size:12px;color:var(--tx2);letter-spacing:1px;font-weight:700;margin-bottom:8px">ANALYSE DE TA SÉANCE</div>
       <div style="display:flex;flex-wrap:wrap;gap:5px">
         <span class="mob-tag focus">🎯 ${analysis.pname}</span>
         ${(userProfile?.weakZones||[]).map(w=>`<span class="mob-tag weak">⚡ Point faible : ${w}</span>`).join('')}
@@ -1007,7 +1007,7 @@ function genMobility(){
   }
 
   let html=`<div class="card" style="margin-bottom:12px">
-    <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--o);letter-spacing:1px;font-weight:700;margin-bottom:4px">ROUTINE ${analysis.isRest?'RÉCUP FULL BODY':'PERSONNALISÉE'}</div>
+    <div style="font-family:\'Barlow Condensed\',sans-serif;font-size:12px;color:var(--o);letter-spacing:1px;font-weight:700;margin-bottom:4px">ROUTINE ${analysis.isRest?'RÉCUP FULL BODY':'PERSONNALISÉE'}</div>
     <div style="font-size:13px;color:var(--tx2)">${exercises.length} exercices · ~${exercises.length*2+3} min · Adapté à toi</div>
   </div>`;
 
@@ -1101,11 +1101,11 @@ function renderBodyMetrics(body){
   </div>`;
 
   if(tdee){
-    html+=`<div class="card"><div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--tx2);letter-spacing:1px;margin-bottom:10px">OBJECTIFS CALORIQUES</div>
+    html+=`<div class="card"><div style="font-family:\'Barlow Condensed\',sans-serif;font-size:13px;font-weight:700;color:var(--tx2);letter-spacing:1px;margin-bottom:10px">OBJECTIFS CALORIQUES</div>
       <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <div style="flex:1;min-width:80px;text-align:center;padding:10px;background:var(--c2);border-radius:8px"><div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--blue)">${tdee-500}</div><div style="font-size:11px;color:var(--tx2)">Perte de poids</div></div>
-        <div style="flex:1;min-width:80px;text-align:center;padding:10px;background:var(--c2);border-radius:8px;border:1px solid var(--o)"><div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--o)">${tdee}</div><div style="font-size:11px;color:var(--tx2)">Maintien</div></div>
-        <div style="flex:1;min-width:80px;text-align:center;padding:10px;background:var(--c2);border-radius:8px"><div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--green)">${tdee+300}</div><div style="font-size:11px;color:var(--tx2)">Prise de masse</div></div>
+        <div style="flex:1;min-width:80px;text-align:center;padding:10px;background:var(--c2);border-radius:8px"><div style="font-family:\'Barlow Condensed\',sans-serif;font-size:20px;font-weight:800;color:var(--blue)">${tdee-500}</div><div style="font-size:11px;color:var(--tx2)">Perte de poids</div></div>
+        <div style="flex:1;min-width:80px;text-align:center;padding:10px;background:var(--c2);border-radius:8px;border:1px solid var(--o)"><div style="font-family:\'Barlow Condensed\',sans-serif;font-size:20px;font-weight:800;color:var(--o)">${tdee}</div><div style="font-size:11px;color:var(--tx2)">Maintien</div></div>
+        <div style="flex:1;min-width:80px;text-align:center;padding:10px;background:var(--c2);border-radius:8px"><div style="font-family:\'Barlow Condensed\',sans-serif;font-size:20px;font-weight:800;color:var(--green)">${tdee+300}</div><div style="font-size:11px;color:var(--tx2)">Prise de masse</div></div>
       </div>
     </div>`;
   }
@@ -1116,7 +1116,7 @@ function renderBodyEntry(body){
   const today=new Date().toLocaleDateString('fr-FR');
   const d=getLatestBody()||{};
   body.innerHTML=`<div class="measure-form">
-    <div style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--tx2);letter-spacing:1px;margin-bottom:12px">NOUVELLE SAISIE</div>
+    <div style="font-family:\'Barlow Condensed\',sans-serif;font-size:14px;font-weight:700;color:var(--tx2);letter-spacing:1px;margin-bottom:12px">NOUVELLE SAISIE</div>
     <div style="margin-bottom:10px"><div class="edit-label">DATE (pas dans le futur)</div><input type="date" id="body-date" max="${new Date().toISOString().split('T')[0]}" value="${new Date().toISOString().split('T')[0]}"/></div>
     <div class="measure-grid">
       <div class="measure-field"><label>POIDS (kg)</label><input type="number" id="body-weight" step="0.1" placeholder="${d.weight||75}"/></div>
@@ -1124,7 +1124,7 @@ function renderBodyEntry(body){
       <div class="measure-field"><label>ÂGE</label><input type="number" id="body-age" placeholder="${d.age||25}"/></div>
       <div class="measure-field"><label>SEXE</label><select id="body-sex"><option value="m" ${(d.sex||'m')==='m'?'selected':''}>Homme</option><option value="f" ${d.sex==='f'?'selected':''}>Femme</option></select></div>
     </div>
-    <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:var(--tx2);letter-spacing:1px;margin:12px 0 8px">MENSURATIONS (optionnel)</div>
+    <div style="font-family:\'Barlow Condensed\',sans-serif;font-size:12px;font-weight:700;color:var(--tx2);letter-spacing:1px;margin:12px 0 8px">MENSURATIONS (optionnel)</div>
     <div class="measure-grid">
       <div class="measure-field"><label>TOUR DE TAILLE (cm)</label><input type="number" id="body-waist" step="0.5" placeholder="${d.waist||''}"/></div>
       <div class="measure-field"><label>TOUR DE HANCHES (cm)</label><input type="number" id="body-hips" step="0.5" placeholder="${d.hips||''}"/></div>
@@ -1133,7 +1133,7 @@ function renderBodyEntry(body){
       <div class="measure-field"><label>TOUR DE COU (cm)</label><input type="number" id="body-neck" step="0.5" placeholder="${d.neck||''}"/></div>
       <div class="measure-field"><label>TOUR DE POITRINE (cm)</label><input type="number" id="body-chest" step="0.5" placeholder="${d.chest||''}"/></div>
     </div>
-    <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:var(--tx2);letter-spacing:1px;margin:12px 0 8px">SI TU CONNAIS (optionnel)</div>
+    <div style="font-family:\'Barlow Condensed\',sans-serif;font-size:12px;font-weight:700;color:var(--tx2);letter-spacing:1px;margin:12px 0 8px">SI TU CONNAIS (optionnel)</div>
     <div class="measure-grid">
       <div class="measure-field"><label>% MASSE GRASSE</label><input type="number" id="body-fat" step="0.1" placeholder="${d.bodyFatPct||''}"/></div>
       <div class="measure-field"><label>% MASSE MUSCULAIRE</label><input type="number" id="body-muscle" step="0.1" placeholder="${d.musclePct||''}"/></div>
@@ -1187,7 +1187,7 @@ function renderBodyCharts(body){
     const pts=data.filter(d=>d[f.key]!==null&&d[f.key]!==undefined);
     if(pts.length<2)return;
     html+=`<div class="chart-wrap">
-      <div class="chart-title"><span>${f.label}</span><span style="color:${f.color};font-family:'Barlow Condensed',sans-serif;font-weight:700">${pts[pts.length-1][f.key]}</span></div>
+      <div class="chart-title"><span>${f.label}</span><span style="color:${f.color};font-family:\'Barlow Condensed\',sans-serif;font-weight:700">${pts[pts.length-1][f.key]}</span></div>
       <canvas class="chart-canvas" id="chart-${f.key}" width="400" height="140"></canvas>
     </div>`;
   });
@@ -1251,8 +1251,8 @@ function renderBodyHistory(body){
     const prev=data[i+1];
     const diff=prev&&d.weight&&prev.weight?+(d.weight-prev.weight).toFixed(1):null;
     html+=`<div class="hist-card">
-      <div class="hist-top"><div><div class="hist-date">${d.date}</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;color:var(--purple)">${d.weight?d.weight+' kg':'—'}</div></div>
-        <div style="text-align:right">${bmi?`<div style="font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;color:${bmiCategory(bmi).color}">IMC ${bmi}</div>`:''}${diff!==null?`<div class="measure-entry-diff ${diff<=0?'down':'up'}">${diff>0?'+':''}${diff} kg</div>`:''}</div>
+      <div class="hist-top"><div><div class="hist-date">${d.date}</div><div style="font-family:\'Barlow Condensed\',sans-serif;font-size:18px;font-weight:800;color:var(--purple)">${d.weight?d.weight+' kg':'—'}</div></div>
+        <div style="text-align:right">${bmi?`<div style="font-family:\'Barlow Condensed\',sans-serif;font-size:16px;font-weight:700;color:${bmiCategory(bmi).color}">IMC ${bmi}</div>`:''}${diff!==null?`<div class="measure-entry-diff ${diff<=0?'down':'up'}">${diff>0?'+':''}${diff} kg</div>`:''}</div>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:6px">
         ${d.waist?`<span class="hist-ex-pill">Taille: ${d.waist}cm</span>`:''}
@@ -1359,7 +1359,7 @@ function renderProgBuilder(){
     const w=WEEK[day]||{type:'REPOS'},color=TYPE_COLORS[w.type]||'#555',exos=getExos(day);
     html+=`<div class="card" style="padding:0;overflow:hidden;margin-bottom:10px">
       <div style="padding:13px;display:flex;justify-content:space-between;align-items:center">
-        <div><div style="font-family:'Barlow Condensed',sans-serif;font-size:17px;font-weight:800;color:${color};letter-spacing:1px">${day}</div><div style="font-size:12px;color:var(--tx2);margin-top:2px">${w.type}${exos.length?' · '+exos.length+' exercices':''}</div></div>
+        <div><div style="font-family:\'Barlow Condensed\',sans-serif;font-size:17px;font-weight:800;color:${color};letter-spacing:1px">${day}</div><div style="font-size:12px;color:var(--tx2);margin-top:2px">${w.type}${exos.length?' · '+exos.length+' exercices':''}</div></div>
       </div>
       <div class="sess-type-row">`;
     SESS_TYPES.forEach(t=>{html+=`<button class="sess-type-btn${w.type===t?' active':''}" onclick="setDayType('${day}','${t}')" style="${w.type===t?'background:'+color+';border-color:'+color+';color:#000':''}">${t}</button>`;});
@@ -1521,7 +1521,7 @@ function renderBadges(){
   ['legendary','gold','silver','bronze'].forEach(tier=>{
     const tb=BADGE_DEFS.filter(b=>b.tier===tier);
     const col=TIER_COLORS[tier];
-    html+=`<div style="font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;margin:14px 0 10px;color:${col}">${TIER_NAMES[tier]}</div><div class="badge-grid">`;
+    html+=`<div style="font-family:\'Barlow Condensed\',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;margin:14px 0 10px;color:${col}">${TIER_NAMES[tier]}</div><div class="badge-grid">`;
     tb.forEach(b=>{
       const ok=unlocked.includes(b.id);
       html+=`<div class="badge-card${ok?' unlocked':' locked'}">
@@ -1616,7 +1616,7 @@ function renderRunning(){
   if(!runs.length){listEl.innerHTML="<div class='empty'>Aucune course.<br>Ajoute ta première !</div>";return;}
   listEl.innerHTML=runs.map(r=>`<div class="hist-card">
     <div class="hist-top">
-      <div><div class="hist-date">${r.date}</div><div style="font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:800;color:#a78bfa">${r.km||'—'}km</div></div>
+      <div><div class="hist-date">${r.date}</div><div style="font-family:\'Barlow Condensed\',sans-serif;font-size:19px;font-weight:800;color:#a78bfa">${r.km||'—'}km</div></div>
       <div style="text-align:right">
         ${r.pace?`<div style="font-size:13px;font-weight:700;color:var(--o)">${formatPace(r.pace)}/km</div>`:''}
         ${r.speed?`<div style="font-size:12px;color:var(--tx2)">${r.speed}km/h</div>`:''}
@@ -1649,8 +1649,8 @@ function renderWeeklySummary(){
       <div class="weekly-stat"><div class="weekly-stat-val" style="color:var(--green)">${vol>0?vol.toLocaleString():'—'}</div><div class="weekly-stat-lbl">kg soulevés</div></div>
       <div class="weekly-stat"><div class="weekly-stat-val" style="color:#a78bfa">${km>0?km+'km':'—'}</div><div class="weekly-stat-lbl">Course</div></div>
     </div>
-    ${isPerfect?'<div style="text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;color:var(--green);letter-spacing:2px;margin-bottom:8px">✨ SEMAINE PARFAITE !</div>':''}
-    <button onclick="askWeeklyAI()" style="width:100%;padding:10px;background:transparent;border:1px solid #a78bfa;border-radius:10px;color:#a78bfa;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:800;letter-spacing:1px;cursor:pointer">🤖 ANALYSE IA DE MA SEMAINE ↗</button>
+    ${isPerfect?'<div style="text-align:center;font-family:\'Barlow Condensed\',sans-serif;font-size:13px;font-weight:800;color:var(--green);letter-spacing:2px;margin-bottom:8px">✨ SEMAINE PARFAITE !</div>':''}
+    <button onclick="askWeeklyAI()" style="width:100%;padding:10px;background:transparent;border:1px solid #a78bfa;border-radius:10px;color:#a78bfa;font-family:\'Barlow Condensed\',sans-serif;font-size:13px;font-weight:800;letter-spacing:1px;cursor:pointer">🤖 ANALYSE IA DE MA SEMAINE ↗</button>
   </div>`;
 }
 function askWeeklyAI(){
